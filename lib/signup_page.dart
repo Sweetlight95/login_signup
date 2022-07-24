@@ -1,5 +1,6 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 
 class SignUp extends StatefulWidget {
 
@@ -152,6 +153,17 @@ class _SignUpState extends State<SignUp> {
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
+              ),
+            ),
+          ),
+          SizedBox(height: 10,),
+          RichText(
+            text: TextSpan(
+              recognizer: TapGestureRecognizer()..onTap=()=>Get.back(),
+              text: "Have an account?",
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.brown[500],
               ),
             ),
           ),

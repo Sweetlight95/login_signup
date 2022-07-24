@@ -1,5 +1,8 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
+import 'package:get/get_core/src/get_main.dart';
+import 'package:login_sigin_auth/signup_page.dart';
+import 'package:get/get.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -13,7 +16,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
-    return Scaffold(
+    return Scaffold (
       backgroundColor: Colors.white70,
       body: Column(
         children: [
@@ -63,6 +66,8 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   child: TextField(
                     decoration: InputDecoration(
+                      hintText: "Email",
+                      prefixIcon: Icon(Icons.email, color: Colors.amber,),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
                         borderSide: BorderSide(
@@ -99,6 +104,8 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   child: TextField(
                     decoration: InputDecoration(
+                      hintText: "Password",
+                      prefixIcon: Icon(Icons.password_outlined, color: Colors.amber,),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
                         borderSide: BorderSide(
@@ -174,6 +181,7 @@ class _LoginPageState extends State<LoginPage> {
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
+                    recognizer: TapGestureRecognizer()..onTap=()=>Get.to(()=>SignUp())
                   ),
             ]
           ))
